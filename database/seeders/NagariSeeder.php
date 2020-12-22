@@ -14,6 +14,6 @@ class NagariSeeder extends Seeder
      */
     public function run()
     {
-        Nagari::factory()->count(10)->create();
+        Nagari::factory()->count(5)->create();
     }
 }

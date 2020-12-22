@@ -15,6 +15,6 @@ class KartuKeluargaSeeder extends Seeder
      */
     public function run()
     {
-        KartuKeluarga::factory()->count(10)->create();
+        KartuKeluarga::factory()->count(30)->create();
     }
 }

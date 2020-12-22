@@ -29,7 +29,7 @@
     <link href="css/themes/all-themes.css" rel="stylesheet" />
 </head>
 
-<body class="theme-purple">
+<body class="theme-black">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">

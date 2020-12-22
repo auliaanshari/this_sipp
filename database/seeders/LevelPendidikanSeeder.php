@@ -14,6 +14,11 @@ class LevelPendidikanSeeder extends Seeder
      */
     public function run()
     {
-        LevelPendidikan::factory()->count(7)->create();
+        $level_pendidikan = array('Tidak Sekolah', 'SD', 'SMP', 'SMA', 'S1', 'S2', 'S3');
+        foreach($level_pendidikan as $level):
+        LevelPendidikan::create([
+            'nama' => $level
+        ]);
+        endforeach;
     }
 }

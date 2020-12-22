@@ -15,6 +15,6 @@ class JorongSeeder extends Seeder
      */
     public function run()
     {
-        Jorong::factory()->count(10)->create();
+        Jorong::factory()->count(15)->create();
     }
 }

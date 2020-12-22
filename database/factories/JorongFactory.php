@@ -23,10 +23,13 @@ class JorongFactory extends Factory
      */
     public function definition()
     {
-        $faker = Faker::create('en_HK');
+        $faker = Faker::create('ne_NP');
+        $nagaris = Nagari::all()->random(1);
+        foreach ($nagaris as $nagari):
         return [
-            'nagari_id' => Nagari::factory(),
-            'nama' => $faker->village
+            'nagari_id' => $nagari->id,
+            'nama' => $faker->district
         ];
+        endforeach;
     }
 }

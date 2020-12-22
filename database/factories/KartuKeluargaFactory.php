@@ -24,10 +24,13 @@ class KartuKeluargaFactory extends Factory
     public function definition()
     {
         $faker = Faker::create('id_ID');
-        return [
-            'jorong_id' => Jorong::factory(),
-            'tanggal_pencatatan' => $faker->dateTimeBetween('2000-01-01', '2020-12-31')->format('Y-m-d'),
-            'no' => $faker->nik
-        ];
+        $jorongs = Jorong::all()->random(1);
+        foreach ($jorongs as $jorong):
+            return [
+                'jorong_id' => $jorong->id,
+                'tanggal_pencatatan' => $faker->dateTimeBetween('2000-01-01', '2020-12-31')->format('Y-m-d'),
+                'no' => $faker->nik
+            ];
+        endforeach;
     }
 }

@@ -22,10 +22,10 @@ class LevelPendidikanFactory extends Factory
      */
     public function definition()
     {
-        $faker = Faker::create('id_ID');
-        $level = array('Tidak Sekolah', 'SD', 'SMP', 'SMA', 'S1', 'S2', 'S3');
+        // $faker = Faker::create('id_ID');
+        // $level = array('Tidak Sekolah', 'SD', 'SMP', 'SMA', 'S1', 'S2', 'S3');
         return [
-            'nama' => $faker->randomElement($level)
+            // 'nama' => $faker->randomElement($level)
         ];
     }
 }

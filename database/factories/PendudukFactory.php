@@ -31,21 +31,35 @@ class PendudukFactory extends Factory
         $gender = array('Laki-laki', 'Perempuan');
         $status_nikah = array('Belum Menikah', 'Menikah', 'Janda/Duda');
         $status_kel = array('Ayah', 'Ibu', 'Anak', 'Orang Tua');
-        return [
-            'keluarga_id' => KartuKeluarga::factory(),
-            'nama' => $faker->name,
-            'nik' => $faker->nik,
-            'tempat_lahir' => $faker->cityName,
-            'tanggal_lahir' => $faker->dateTimeBetween('1960-01-01', '2020-12-31')->format('Y-m-d'),
-            'agama' => $faker->randomElement($agama),
-            'jenis_kelamin' => $faker->randomElement($gender),
-            'level_pendidikan_id' => LevelPendidikan::factory(),
-            'pekerjaan_id' => Pekerjaan::factory(),
-            'status_pernikahan' => $faker->randomElement($status_nikah),
-            'status_keluarga' => $faker->randomElement($status_kel),
-            'kewarganegaraan_id' => Kewarganegaraan::factory(),
-            'ayah' => $faker->firstNameMale,
-            'ibu' => $faker->firstNameFemale
-        ];
+
+        $levels = LevelPendidikan::all()->random(1);
+        $jobs = Pekerjaan::all()->random(1);
+        $warga = Kewarganegaraan::all()->random(1);
+        $kartukeluarga = KartuKeluarga::all()->random(1);
+
+        foreach ($levels as $level):
+            foreach ($jobs as $job):
+                foreach ($warga as $wn):
+                    foreach ($kartukeluarga as $kk):
+                        return [
+                            'keluarga_id' => $kk->id,
+                            'nama' => $faker->name,
+                            'nik' => $faker->nik,
+                            'tempat_lahir' => $faker->cityName,
+                            'tanggal_lahir' => $faker->dateTimeBetween('1960-01-01', '2020-12-31')->format('Y-m-d'),
+                            'agama' => $faker->randomElement($agama),
+                            'jenis_kelamin' => $faker->randomElement($gender),
+                            'level_pendidikan_id' => $level->id,
+                            'pekerjaan_id' => $job->id,
+                            'status_pernikahan' => $faker->randomElement($status_nikah),
+                            'status_keluarga' => $faker->randomElement($status_kel),
+                            'kewarganegaraan_id' => $wn->id,
+                            'ayah' => $faker->firstNameMale,
+                            'ibu' => $faker->firstNameFemale
+                        ];
+                    endforeach;
+                endforeach;
+            endforeach;
+        endforeach;
     }
 }

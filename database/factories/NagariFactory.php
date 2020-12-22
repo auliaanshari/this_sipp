@@ -22,9 +22,9 @@ class NagariFactory extends Factory
      */
     public function definition()
     {
-        $faker = Faker::create('en_HK');
+        $faker = Faker::create('ne_NP');
         return [
-            'nama' => $faker->town
+            'nama' => $faker->cityName
         ];
     }
 }

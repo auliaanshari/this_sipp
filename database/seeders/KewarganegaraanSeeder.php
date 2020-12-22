@@ -14,6 +14,11 @@ class KewarganegaraanSeeder extends Seeder
      */
     public function run()
     {
-        Kewarganegaraan::factory()->count(2)->create();
+        $warga = array('WNI', 'WNA');
+        foreach($warga as $wn):
+            Kewarganegaraan::create([
+            'nama' => $wn
+        ]);
+        endforeach;
     }
 }
