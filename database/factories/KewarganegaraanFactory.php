@@ -22,10 +22,8 @@ class KewarganegaraanFactory extends Factory
      */
     public function definition()
     {
-        // $faker = Faker::create('id_ID');
-        // $warga = array('WNI', 'WNA');
         return [
-            // 'nama' => $faker->randomElement($warga)
+
         ];
     }
 }

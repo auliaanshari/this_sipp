@@ -15,7 +15,7 @@ class CreateLevelPendidikansTable extends Migration
     {
         Schema::create('level_pendidikan', function (Blueprint $table) {
             $table->id();
-            $table->enum('nama', ['Tidak Sekolah', 'SD', 'SMP', 'SMA', 'S1', 'S2', 'S3']);
+            $table->string('nama');
 
             // $table->timestamps();
         });

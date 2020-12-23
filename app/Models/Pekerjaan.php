@@ -13,6 +13,10 @@ class Pekerjaan extends Model
 
     protected $table = "pekerjaan";
 
+    protected $fillable = [
+        'nama'
+    ];
+
     public function penduduk(){
         return $this->hasMany(Penduduk::class);
     }

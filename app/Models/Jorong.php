@@ -13,6 +13,10 @@ class Jorong extends Model
 
     protected $table = "jorong";
 
+    protected $fillable = [
+        'nama'
+    ];
+
     public function nagari(){
         return $this->belongsTo(Nagari::class);
     }

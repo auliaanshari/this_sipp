@@ -13,6 +13,10 @@ class KartuKeluarga extends Model
 
     protected $table = "kartu_keluarga";
 
+    protected $fillable = [
+        'nama'
+    ];
+
     public function jorong(){
         return $this->belongsTo(Jorong::class);
     }

@@ -13,6 +13,10 @@ class LevelPendidikan extends Model
 
     protected $table = "level_pendidikan";
 
+    protected $fillable = [
+        'nama'
+    ];
+
     public function penduduk(){
         return $this->hasMany(Penduduk::class);
     }

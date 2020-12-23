@@ -17,7 +17,7 @@ class CreatePenduduksTable extends Migration
             $table->id();
             $table->foreignId('keluarga_id')->constrained('kartu_keluarga')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama');
-            $table->string('nik')->unique();
+            $table->string('nik');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
             $table->enum('agama', ['Islam', 'Katolik', 'Protestan', 'Hindu', 'Buddha', 'Konghucu']);

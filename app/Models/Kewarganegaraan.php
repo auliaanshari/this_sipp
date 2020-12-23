@@ -13,6 +13,10 @@ class Kewarganegaraan extends Model
 
     protected $table = "kewarganegaraan";
 
+    protected $fillable = [
+        'nama'
+    ];
+
     public function penduduk(){
         return $this->hasMany(Penduduk::class);
     }

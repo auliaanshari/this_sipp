@@ -12,6 +12,10 @@ class Nagari extends Model
     public $timestamps = false;
 
     protected $table = "nagari";
+    
+    protected $fillable = [
+        'nama'
+    ];
 
     public function jorong(){
         return $this->hasMany(Jorong::class);

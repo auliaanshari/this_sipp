@@ -13,6 +13,11 @@ class Penduduk extends Model
 
     protected $table = "penduduk";
 
+    protected $fillable = [
+        'nama', 'nik', 'tempat_lahir', 'tanggal_lahir', 'agama', 'jenis_kelamin', 
+        'status_pernikahan', 'status_keluarga', 'ayah', 'ibu'
+    ];
+
     public function kartu_keluarga(){
         return $this->belongsTo(KartuKeluarga::class,'keluarga_id');
     }

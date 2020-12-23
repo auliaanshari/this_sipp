@@ -15,7 +15,7 @@ class CreateKewarganegaraansTable extends Migration
     {
         Schema::create('kewarganegaraan', function (Blueprint $table) {
             $table->id();
-            $table->enum('nama', ['WNI', 'WNA']);
+            $table->string('nama');
 
             // $table->timestamps();
         });
